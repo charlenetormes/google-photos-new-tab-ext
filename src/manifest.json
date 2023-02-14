@@ -1,0 +1,35 @@
+{
+    "name": "Vue3+ViteJS Chrome Extension Template",
+    "description": "Extend features for Voluum Platform",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "action": {
+        "default_icon": {
+            "16": "assets/logo.png",
+            "48": "assets/logo.png",
+            "128": "assets/logo.png"
+        },
+        "default_popup": "popup/index.html"
+    },
+    "icons": {
+        "16": "assets/logo.png",
+        "48": "assets/logo.png",
+        "128": "assets/logo.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["http://*.google.com/*"],
+            "js": ["content_scripts/main.js"],
+            "css": ["styles/tailwind.min.css"]
+        }
+    ],
+    "chrome_url_overrides": {
+        "newtab": "new_tab/index.html"
+    },
+    "permissions": ["tabs", "scripting", "notifications"],
+    "host_permissions": ["http://*/google.com/*"]
+}
