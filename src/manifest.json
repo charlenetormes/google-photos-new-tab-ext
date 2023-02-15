@@ -35,6 +35,6 @@
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoWeJ7kJ+5HnE3qNuD9kSNi3oNoMwprRCehzPKgVeTe+1qffgCkv7rFnC2VzGA/V4lpBOL5yLDij7kd4kVG7OlHAXUqFi7tq3y1ahwLt0o/Ny3ghRGvI7ftQ0fFnSlpCRJOTtJbZzLXhxF9OvoXo6uhziYMvg20WE0qaPMF5amAdRntO2Rbeu9yGe2nGv7CRMcjFMuxRL70mPqGTUXpuFEtqq7d8KyDqcKZD45KVQNkUiO0YggkDHEZdKcTJ4E5x9WfmprZunjbtUsyBJCPPrrkFDVfOuBjvMXAiQD2Km1+NZDa9imIw1aA9HyY8Haf5KqkwbeDTNcW8YDSLefTkq+QIDAQAB",
     "oauth2": {
         "client_id": "878246093837-d02f95nsmt62qprj56fva6anok83dqn7.apps.googleusercontent.com",
-        "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/photoslibrary"]
+        "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/photoslibrary.readonly"]
     }
 }
