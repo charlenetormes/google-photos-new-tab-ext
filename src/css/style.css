@@ -1,0 +1,117 @@
+/* general */
+
+html,
+body {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#root {
+    overflow: auto;
+    height: 100%;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin: 0px;
+    padding: 0px;
+}
+
+/**/
+
+aside.show {
+    z-index: 9;
+}
+
+.contacts__item.hidden {
+    display: none;
+}
+
+.nothing_found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 24px;
+}
+
+.nothing_found img {
+    height: 64px;
+    width: 64px;
+}
+
+.modal_message {
+    width: 90%;
+    border: none;
+    box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.autosuggest {
+    width: 75%;
+    margin-top: 7px;
+    border: none;
+    padding: 10px 0 10px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.35);
+    outline: none;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    list-style-type: none;
+}
+
+.autosuggest li {
+    display: block;
+    transition: 0.25s all;
+    position: relative;
+}
+
+.autosuggest li.sponsored::before {
+    content: 'Sponsored';
+    font-style: italic;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.autosuggest li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.autosuggest li a {
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    padding: 7px 15px;
+}
+
+main .search-box--container #search-box-wrapper #search-box button.clear_input {
+    width: 25px;
+    height: 50px;
+    right: 50px;
+    background-image: none;
+}
+
+main .search-box--container #search-box-wrapper #search-box button.clear_input i.close {
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
