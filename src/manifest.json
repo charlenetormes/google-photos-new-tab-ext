@@ -1,5 +1,5 @@
 {
-    "name": "Google Photos Extension",
+    "name": "Memoria",
     "description": "Display random photos from your Google Photos to your New Tab",
     "version": "0.0.0.1",
     "manifest_version": 3,
