@@ -68,8 +68,9 @@ onMounted(async () => {
             root_style.value = {
                 backgroundImage: `url(${storage?.today_bg?.photoUrl})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundColor: 'black',
+                backgroundPosition: 'center',
             }
         }
     } catch (e) {
@@ -127,7 +128,7 @@ const logout = async () => {
 }
 
 const fetchPhoto = async (token) => {
-    let init = {
+    const favoriteInit = {
         method: 'POST',
         async: true,
         headers: {
@@ -145,9 +146,19 @@ const fetchPhoto = async (token) => {
         contentType: 'json',
     }
 
+    const init = {
+        method: 'GET',
+        async: true,
+        headers: {
+            Authorization: 'Bearer ' + token,
+            'Content-Type': 'application/json',
+        },
+        contentType: 'json',
+    }
+
     const API_KEY = 'AIzaSyCdljn7WuW-fwKQ6NLyXfalIrZ51wEhgFs'
     const GOOGLE_PHOTOS_CLIENT_ID = '878246093837-d02f95nsmt62qprj56fva6anok83dqn7.apps.googleusercontent.com'
-    const data = await fetch(`https://photoslibrary.googleapis.com/v1/mediaItems:search`, init)
+    let data = await fetch(`https://photoslibrary.googleapis.com/v1/mediaItems:search`, favoriteInit)
         .then((response) => {
             return response.json()
         })
@@ -155,7 +166,15 @@ const fetchPhoto = async (token) => {
             return null
         })
 
-    console.log('bag-o nani', data)
+    if (Object.keys(data).length === 0) {
+        data = await fetch(`https://photoslibrary.googleapis.com/v1/mediaItems`, init)
+            .then((response) => {
+                return response.json()
+            })
+            .catch((e) => {
+                return null
+            })
+    }
 
     const photos = data?.mediaItems ?? []
     const randomInt = Math.random() * (photos.length - 1 - 0) + 0
